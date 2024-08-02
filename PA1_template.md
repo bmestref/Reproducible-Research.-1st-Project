@@ -52,7 +52,7 @@ Which 5-minute interval, on average across all the days in the dataset, contains
 final_interval <- new_sol[new_sol$steps == max(new_sol$steps),1]
 print(paste('Max steps interval:', final_interval, sep = ' '))
 ```
-##Imputing missing values
+## Imputing missing values
 
 Note that there are a number of days/intervals where there are missing values (coded as 
 NA). The presence of missing days may introduce bias into some calculations or summaries of the data.
@@ -81,7 +81,7 @@ med_val_nonas <- median(sol_nonas[,2])
 print(paste('New mean:',mea_val_nonas, 'New Median:', med_val_nonas, sep = ' '))
 ```
 The mean is the same as the mean from the first part of the assignment, but the median is not, although their values are close. Imputing missing data using the average of the 5-minute interval results in more data points equal to the mean and smaller variation of the distribution. Since many data points have the same values as the mean, the median is much likely to be the same as the mean as well.
-##Are there differences in activity patterns between weekdays and weekends?
+## Are there differences in activity patterns between weekdays and weekends?
 Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
 ```{r factor_weekdays}
 data_nonas$day <- weekdays(data_nonas$date)
